@@ -1,0 +1,21 @@
+".initcor.me" <-
+function(where)
+  {
+    if(!isGeneric("cor.me"))
+      setGeneric("cor.me", function(exp1,se1,exp2,se2) standardGeneric("cor.me"))
+    setMethod("cor.me",signature(exp1="vector",se1="vector",exp2="vector",se2="vector"),function(exp1,se1,exp2,se2) cor.me.vector(exp1,se1,exp2,se2))
+    setMethod("cor.me",signature(exp1="matrix",se1="matrix",exp2="missing",se2="missing"), function(exp1,se1,exp2,se2) cor.me.matrix(exp1,se1))
+  }
+
+#".First.lib" <-
+".onLoad" <-
+function(libname,pkgname,where)
+  if(missing(where)) {
+    where <- match(paste("package:", pkgname, sep=""), search())
+    if(is.na(where)) {
+      warning(paste("Not a package name: ",pkgname))
+      return()
+    }
+    where <- pos.to.env(where)
+    .initcor.me(where)
+  }

@@ -1,0 +1,23 @@
+\name{TransformCon2Uncon}
+\alias{TransformCon2Uncon}
+\title{ A function to tranform the parameters from constrained to unconstrained parameterization } 
+\description
+ Given a vector of the parameters under constrained parameterization, a transformation of the parameters with constraints are transformed to un constrained space.
+}
+\usage{
+TransformCon2Uncon(con)
+}
+\arguments{
+  \item{con}{ A vector of constrained parameters, in the order of \code{cor.me}, \code{cor.true}, \code{mu1}, \code{mu2}, \code{v1},\code{v2} where \code{cor.me} and \code{cor.true} are between -1 and 1, \code{v1} and \code{v2} are greater or equal to zero}
+}
+\details{
+}
+\value{
+  \item{uncon}{a vector of unconstrained parameters, with the same length as input vector}
+}
+\references{Ding, B.Y. and Gentleman, R.(2003) Measurement error model for correlation coeffcient estimation and its application in microarray analsysis}
+\author{ Beiying Ding }
+\note{The transformation are only specific to the measurement error model context and is for internal use only}
+\seealso{\code{TransformUncon2Con}}
+\examples{}
+\keyword{}

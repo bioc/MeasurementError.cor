@@ -1,0 +1,25 @@
+\name{CalcInitials}
+\alias{CalcInitials}
+\title{ A function to calculate initial values of mean and variance for measurement error model }
+\description{
+ Given a vector of numeric values, the sample and mean and variance are calculated as the initial values for measurement error model estimates for mean and variance}
+\usage{
+CalcInitials(x)
+}
+\arguments{
+  \item{x}{ a numeric vector}
+}
+\details{ For internal use only;
+}
+\value{
+  A vector of length 2: initial estimate for mean and variance
+}
+\references{  }
+\author{ Beiying Ding }
+\note{Specific to measurement error model  }
+\seealso{ }
+\examples{
+x <- rnorm(20)
+CalcInitials(x)
+}
+\keyword{ } 

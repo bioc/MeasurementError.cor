@@ -1,0 +1,32 @@
+\name{fcn.uncons}
+\alias{fcn.uncons}
+\title{ A function to evaluate the loglikelihood function under unconstrained parameterization }
+\description{
+Given a vector of parameter estimates and the data, the value of the loglikelihood function is returned}
+\usage{
+fcn.uncons(x, exp1, se1, exp2, se2)
+}
+\arguments{
+  \item{x}{ a vector of parameters}
+  \item{exp1}{ observed value for vector 1 }
+  \item{se1}{ standard error estimate for vector 1}
+  \item{exp2}{observed value for vector 2 }
+  \item{se2}{ standard error estimate for vector 2}
+}
+\details{
+ Often times in gene expression data application, exp1 and exp2 can be considered as gene expression for gene 1 and 2 and se1 and se2 are the respective standard error estimates
+}
+\value{
+  the loglikelihood function evaluated at the given parameter estimates and data
+}
+\references{  }
+\author{ Beiying Ding}
+\note{ loglikelihood function is specific to Measurement error model correlation here }
+\seealso{  }
+\examples{
+ exp <- matrix(abs(rnorm(200,1000,20)),ncol=10)
+ se <- matrix(abs(rnorm(200,50,5)),ncol=10)
+ init <- c(1,1,1000,1000,100,100)
+ fcn.uncons(init,exp[1,],se[1,],exp[2,],se[2,])
+}
+\keyword{ }

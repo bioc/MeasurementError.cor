@@ -1,0 +1,35 @@
+\name{cor.me}
+\alias{cor.me}
+\title{ A generic function to calculate measurement error estimates for variables  }
+\description{
+Given the observed values and their respective standard errors, the measurement error estimates are returned}
+\usage{
+cor.me(exp1,se1,exp2,se2)
+cor.me(exp, se)
+}
+\arguments{
+  \item{exp1}{ observed value for vector 1}
+  \item{se1}{ standard error for vector 1 }
+  \item{exp2}{observed valued for vector 2}
+ \item{se2} {standard error for vector 2}
+ \item{exp} {observed value in matrix}
+ \item{se}  {standard error for \code{exp}}
+}
+\details{
+If two variable vectors and their standard error vectors are given, \code{cor.me.vector} is called; whereas if the supplied arguement are two matrices, then \code{cor.me.matrix} is called
+}
+\value{
+  If two vectors of observed values and standard errors are supplied, the final estimates for \code{cor.me},\code{cor.true},\code{mu1},\code{mu2},\code{s1},\code{s2} are returned.
+  If two matrices of observed values and standard errors are supplied, the final estimates for true correlations (i.e. \code{cor.true}) for all pairs of genes in the matrix are returned.
+}
+\references{  }
+\author{ Beiying Ding}
+\note{ Refer to notes for \code{cor.me.vector} and \code{cor.me.matrix} }
+\seealso{ \code{cor.me.vector},\code{cor.me.matrix} }
+\examples{
+ exp <- matrix(abs(rnorm(200,1000,20)),ncol=10)
+ se <- matrix(abs(rnorm(200,50,5)),ncol=10)
+ cor.me(exp[1,],se[1,],exp[2,],se[2,])
+ cor.me(exp,se)
+}
+\keyword{bivariate normal }

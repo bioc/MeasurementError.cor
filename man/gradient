@@ -1,0 +1,32 @@
+\name{gradient}
+\alias{gradient}
+\title{ A function to evaluate the gradient function under constrained parameterization }
+\description{
+Given a vector of constrained parameter estimates and the data, the value of the gradient function is returned}
+\usage{
+gradient(x, exp1, se1, exp2, se2)
+}
+\arguments{
+  \item{x}{ a vector of constrained parameters}
+  \item{exp1}{ observed value for vector 1 }
+  \item{se1}{ standard error estimate for vector 1}
+  \item{exp2}{observed value for vector 2 }
+  \item{se2}{ standard error estimate for vector 2}
+}
+\details{
+ Often times in gene expression data application, exp1 and exp2 can be considered as gene expression for gene 1 and 2 and se1 and se2 are the respective standard error estimates
+}
+\value{
+  the gradient functions (of same length as \code{x}) evaluated at the given parameter estimates and data
+}
+\references{  }
+\author{ Beiying Ding}
+\note{Gradient function is specific to Measurement error model correlation here and is for internal use only}
+\seealso{ \code{gradient.uncons} }
+\examples{
+ exp <- matrix(abs(rnorm(200,1000,20)),ncol=10)
+ se <- matrix(abs(rnorm(200,50,5)),ncol=10)
+ init <- c(0.5,0.5,mean(exp[1,]),mean(exp[2,]),var(exp[1,]),var(exp[2,]))
+ gradient(init,exp[1,],se[1,],exp[2,],se[2,])
+}
+\keyword{ }

@@ -1,0 +1,22 @@
+CalcInitials            A function to calculate initial values of mean
+                        and variance for measurement error model
+cor.me.matrix           A function to calculate measurement error
+                        estimates for all pairs of genes given by the
+                        matrix
+cor.me                  A generic function to calculate measurement
+                        error estimates for variables
+cor.me.vector           A function to calculate measurement error
+                        model estimates for correlation coefficient
+                        betweem two variables
+fcn                     A function to evaluate the loglikelihood
+                        function under constrained parameterization
+fcn.uncons              A function to evaluate the loglikelihood
+                        function under unconstrained parameterization
+gradient                A function to evaluate the gradient function
+                        under constrained parameterization
+gradient.uncons         A function to evaluate the gradient function
+                        under unconstrained parameterization
+TransformCon2Uncon      A function to tranform the parameters from
+                        constrained to unconstrained parameterization
+TransformUncon2Con      A function to tranform the parameters from
+                        unconstrained to constrained parameterization

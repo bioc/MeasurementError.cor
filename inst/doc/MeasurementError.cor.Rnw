@@ -1,0 +1,43 @@
+%
+% NOTE -- ONLY EDIT THE .Rnw FILE!!!  The .tex file is
+% likely to be overwritten.
+%
+% \VignetteIndexEntry{MeasurementError.cor Tutorial}
+% \VignetteDepends{tools}
+% \VignetteKeywords{}
+% \VignettePackage{MeasurementError.cor}
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,epsfig,psfig,pstricks,fullpage}
+\usepackage{graphicx}
+\usepackage[authoryear,round]{natbib}
+\usepackage{hyperref}
+
+%\parindent 0in
+
+\bibliographystyle{plainnat}
+
+\begin{document}
+\title{Measurement error model for correlation coefficient estimation}
+\author{Beiying Ding\\ Robert Gentleman}
+\maketitle
+
+\section*{Introduction}
+The {\tt MeasurementError.cor} package fits a two-stage measurement error model for estimating correlation between two random variables under bivariate normality. It's application is perhaps most relevant for the gene expression data where both point and standard estimates are available. We have shown that the proposed measurement error corrected correlation estimate has lower bias compared with the usual sample pearson correlation. For details, refer to \cite{ding:2003:b} as well as R help pages associated with each function.\\
+
+\section*{The {\tt cor.me.vector} and {\tt cor.me.matrix} functions}
+The {\tt cor.me.vector} calculates the measurement error model estimate of correlation between two observed vectors whereas {\tt cor.me.matrix} calculates all pairwise measurement error model estimate of correlation in the matrix.\\
+ 
+<<>>=
+library(MeasurementError.cor)
+exp <- matrix(abs(rnorm(100,1000,20)),ncol=10)
+se <- matrix(abs(rnorm(100,50,5)),ncol=10)
+cor.me.vector(exp[1,],se[1,],exp[2,],se[2,])
+cor.me.matrix(exp,se)
+
+@
+Note that among the output of {\tt cor.me.vector}, {\tt cor.true} is the quantity of interest, i.e. the model estimate of the correlation between the true value of two random variables whereas {\tt cor.me} is the model estimate of correlation between the measurement errors of the two random variables. The second quantity may not be of interest. {\tt mu1},{\tt mu2} and {\tt s1}, {\tt s2} are the estimated mean and standard deviation of the two random variables. {\tt cor.me.matrix} only returns the estimated correlation matrix.\\
+
+\bibliography{MeasurementError.cor}
+
+\end{document}
