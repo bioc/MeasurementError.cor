@@ -4,6 +4,6 @@ Version: 1.1.0
 Author: Beiying Ding
 Description: Two-stage measurement error model for correlation
         estimation with smaller bias than the usual sample correlation
-Maintainer: Beiying Ding <bding@hsph.harvard.edu>
+Maintainer: Beiying Ding <bding@amgen.com>
 License: LGPL
 
