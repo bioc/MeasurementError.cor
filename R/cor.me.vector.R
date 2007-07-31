@@ -9,10 +9,13 @@ function(exp1,se1,exp2,se2)
  
   init.uncons <- TransformCon2Uncon(init)
 
-  result.uncons <- optim(init.uncons,fcn.uncons,gradient.uncons,"BFGS",hessian=T,exp1=exp1,se1=se1,exp2=exp2,se2=se2)
+  result.uncons <- optim(init.uncons, fcn.uncons, gradient.uncons,
+                         method = "BFGS", hessian=T, exp1=exp1, se1=se1,
+                         exp2=exp2, se2=se2) 
   result.par <- TransformUncon2Con(result.uncons$par)
   result.par[5:6] <- sqrt(result.par[5:6])
   names(result.par) <- c("corr.me","corr.true","mu1","mu2","s1","s2")
-  return(list(estimate=result.par,counts=result.uncons$counts,convergence=result.uncons$convergence))
+  return(list(estimate=result.par, counts=result.uncons$counts,
+                         convergence=result.uncons$convergence)) 
   
 }
