@@ -8,7 +8,7 @@
 % \VignettePackage{MeasurementError.cor}
 \documentclass[11pt]{article}
 
-%\usepackage{amsmath,epsfig,pstricks,fullpage}
+%\usepackage{amsmath,epsfig,fullpage}
 \usepackage{graphicx}
 \usepackage[authoryear,round]{natbib}
 \usepackage{hyperref}
