@@ -17,7 +17,7 @@ cor.me.vector(exp1, se1, exp2, se2)
 \value{
   \item{estimate }{Vecotr containing the estimates from the measurement error model, i.e. \code{cor.me}, \code{cor.true}, \code{mu1}, \code{mu2}, \code{s1}, \code{s2} which are correlation for the measurement error distribution of the two variables, true correlation between the two variables, and true mean and standard deviation estimates for the two variables respectively}
   \item{count }{numer of function and gradient evaluation }
-  \item{convergence} { 0 if converged.  See optim() for details}
+  \item{convergence}{ 0 if converged.  See optim() for details}
 }
 
 \references{ Ding, B.Y. and Gentleman, R. (2003) Measurement Error Model for correlation coefficient estimation and its application in microarray analysis }
