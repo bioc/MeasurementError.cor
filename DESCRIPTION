@@ -1,6 +1,6 @@
 Package: MeasurementError.cor
 Title: Measurement Error model estimate for correlation coefficient
-Version: 1.20.0
+Version: 1.21.0
 Author: Beiying Ding
 Description: Two-stage measurement error model for correlation
         estimation with smaller bias than the usual sample correlation
